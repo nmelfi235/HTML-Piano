@@ -21,7 +21,7 @@ function generatePiano() {
     "G# Sharp",
   ];
   for (let i = 0; i < 88; i++) {
-    p.push(<Key key={i} className={names[(3 + i) % 12]} />);
+    p.push(<Key key={i} keyNum={i - 1} className={names[i % 12]} />);
   }
   return p;
 }
