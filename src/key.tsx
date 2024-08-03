@@ -15,9 +15,9 @@ export default function Key(props: propTypes) {
     const oscillator = audioContext.createOscillator();
     oscillator.connect(audioContext.destination);
 
-    oscillator.type = "square";
+    oscillator.type = "sawtooth";
     oscillator.frequency.setValueAtTime(
-      Number((27.5 * Math.pow(2, props.keyNum / 12)).toPrecision(2)),
+      Number((27.5 * Math.pow(2, props.keyNum / 12)).toPrecision(4)),
       audioContext.currentTime
     );
     oscillator.start(audioContext.currentTime);
